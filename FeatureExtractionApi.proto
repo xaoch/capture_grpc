@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service FeatureExtraction{
+	rpc processVideo (stream Image) returns (Response){}	
+}
+
+message Image {
+	bytes source = 1;
+	string file_name = 2;
+	string timestamp = 3;
+}
+
+message Response{
+	string status = 1;
+}
